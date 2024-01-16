@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body> 
+
+  <h1>Type Of Account</h1>
+  <input type="radio" name="option" value="option1" id="option1">
+    <label for="option1">Personal Acc</label>
+  <br>
+  <input type="radio" name="option" value="option2" id="option2">
+    <label for="option2">Business Acc</label>
+  <br>
+  <br>
+  <input type="submit" value="Submit" onclick="redirectToAccount()">
+
+  <script>
+// Function to redirect to the chosen account
+  function redirectToAccount() {
+  // Get the value of the selected radio button
+  const selectedOption = document.querySelector('input[name="option"]:checked').value;
+
+  // Redirect based on the selected option
+  if (selectedOption === "option1") {
+    window.location.href = "personal-account-page.html";
+  } else if (selectedOption === "option2") {
+    window.location.href = "business-account-page.html";
+  }
+}
+</script>
+</body>
+</html>
