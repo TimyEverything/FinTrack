@@ -1,31 +1,31 @@
 * {
-  box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.473);
-  margin-top: 5px;
-  margin-bottom: 15px;
-  resize: vertical;
-}
-
-  .container {
-    border-radius: 5px;
-    /*background-color: #0d7b8a;*/
-    padding: 40px;
+    box-sizing: border-box;
   }
-
-  .column {
-    float: left;
-    width: 50%;
-    margin-top: 6px;
+  
+  input[type=text], select, textarea {
+    width: 100%;
     padding: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.473);
+    margin-top: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
   }
-
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  
+    .container {
+      border-radius: 5px;
+      /*background-color: #0d7b8a;*/
+      padding: 40px;
+    }
+  
+    .column {
+      float: left;
+      width: 50%;
+      margin-top: 6px;
+      padding: 20px;
+    }
+  
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
