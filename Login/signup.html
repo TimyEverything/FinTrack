@@ -1,35 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
-<body> 
-
-  <h1>Type Of Account</h1>
-  <input type="radio" name="option" value="option1" id="option1">
-    <label for="option1">Personal Acc</label>
-  <br>
-  <input type="radio" name="option" value="option2" id="option2">
-    <label for="option2">Business Acc</label>
-  <br>
-  <br>
-  <input type="submit" value="Submit" onclick="redirectToAccount()">
-
-  <script>
-// Function to redirect to the chosen account
-  function redirectToAccount() {
-  // Get the value of the selected radio button
-  const selectedOption = document.querySelector('input[name="option"]:checked').value;
-
-  // Redirect based on the selected option
-  if (selectedOption === "option1") {
-    window.location.href = "personal-account-page.html";
-  } else if (selectedOption === "option2") {
-    window.location.href = "business-account-page.html";
-  }
-}
-</script>
+<body>
+    <form action="http://localhost:3000/submit-form" method="post" id="myForm">
+        <label for="firstName">First Name</label>
+        <input id="firstName" name="firstName" type="text" placeholder="" required />
+        
+        <label for="lastName">Last Name</label>
+        <input id="lastName" name="lastName" type="text" placeholder="" required />
+        
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="" required />
+        
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="" required />
+        
+        <label for="conPassword">Confirm Password</label>
+        <input id="conPassword" type="password" placeholder="" required />
+      
+        <div>
+          <input type="radio" name="option" value="option1" id="option1" checked>
+          <label for="option1">Personal Acc</label>
+          <br>
+          <input type="radio" name="option" value="option2" id="option2">
+          <label for="option2">Business Acc</label>
+          <br>
+        </div>
+      
+        <br>
+        <button type="button" onclick="validateAndSubmit()">Submit</button>
+      </form>
+      
+      <p>
+        By clicking the Sign Up button, you agree to our <br />
+        <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+      </p>
+      
+      <script>
+        const firstNameInput = document.getElementById("firstName");
+   
+   
+   
+       function validateAndSubmit() {
+           // Validate first name
+          
+       if (firstNameInput.value.length < 2) {
+       alert("Invalid first name. Please enter at least 2 characters.");
+       return;
+       }
+   
+        // Validate last name
+       const lastNameInput = document.getElementById("lastName");
+       if (lastNameInput.value.length < 2) {
+       alert("Invalid last name. Please enter at least 2 characters.");
+       return;
+       }
+   
+       // Validate email
+       const emailInput = document.getElementById("email");
+       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+       if (!emailRegex.test(emailInput.value)) {
+       alert("Invalid email address");
+       return;
+       }
+   
+       // Validate password
+       const passwordInput = document.getElementById("password");
+           if (passwordInput.value.length < 6) {
+       alert("Password should be at least 6 characters long.");
+       return;
+        }
+   
+       // Validate confirm password
+       const conPasswordInput = document.getElementById("conPassword");
+       if (conPasswordInput.value !== passwordInput.value) {
+       alert("Passwords do not match.");
+       return;
+       }
+   
+       // Get the value of the selected radio button
+        const selectedOption = document.querySelector('input[name="option"]:checked');
+           if (selectedOption) {
+       let userName = firstNameInput.value;
+       console.log(userName);
+       alert("Welcome " + userName + "!");
+       // Redirect based on the selected option
+       if (selectedOption.value === "option1") {
+         window.location.href = "personal-account-page.html";
+           } else if (selectedOption.value === "option2") {
+         window.location.href = "business-account-page.html";
+       }
+       } else {
+       alert("Please select an option.");
+       }
+   
+       // Submit the form data and save it to a file
+       saveFormDataToFile();
+       }
+   
+       function saveFormDataToFile() {
+       // Get form data
+       const formData = new FormData(document.getElementById("myForm"));
+   
+       // Create form data string
+        let formDataString = '';
+       for (let pair of formData.entries()) {
+       formDataString += pair[0] + ': ' + pair[1] + '\n';
+       }
+   
+       // Create a Blob object with the form data
+       const blob = new Blob([formDataString], { type: 'text/plain;charset=utf-8' });
+   
+        // Create a download link and click it
+       const link = document.createElement('a');
+       link.href = URL.createObjectURL(blob);
+       link.download = 'form-data.txt';
+       link.click();
+   
+        // URL.revokeObjectURL(blob); // uncomment this line to remove the blob from memory
+       }
+      </script>
+        
 </body>
 </html>
