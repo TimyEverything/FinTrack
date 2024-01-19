@@ -79,6 +79,7 @@ function onChecked(rowIndex) { // Perform actions for checked state
       let inBox = "calculateNet(" + val +")";
       inputBx.setAttribute("oninput", inBox);
       inputBx.setAttribute("type","number");
+      inputBx.setAttribute("min","1");
       console.log(inputBx.attributes);
       td.appendChild(inputBx);
     }
