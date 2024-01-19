@@ -238,7 +238,8 @@ function calculateTax(grIn) {
             }
         }
     }    
-    itemList[12][2] = taxAmount / 12;
+    let roundTaxAmm = taxAmount / 12;
+    itemList[12][2] = roundTaxAmm.toFixed(2);
     tax = itemList[12][2] || "0"; 
     document.getElementById("tax").innerHTML = "<p>R " + tax +"</p>" || "0";
 
