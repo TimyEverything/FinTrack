@@ -38,8 +38,8 @@
           <h2 style="color: white;"><strong> We would love to help you manage your finances better, please contact us.</strong></h2>
         </div>
         <div class="row">
-          <div class="column">
-            <img src="/Images/Financial.jpg" alt="" style="width: 600px;">
+          <div class="column"><br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13241.206243333932!2d18.4606593!3d-33.9333712!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5db42c93a685%3A0xec815c21c6eaef71!2sCapaCiTi%20Tech%20Career%20Accelerator!5e0!3m2!1sen!2sza!4v1707220767150!5m2!1sen!2sza" width="600" height="470" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div class="column">
             <form action="" id="emailForm">
@@ -53,11 +53,14 @@
 
               <label for="message" style="font-weight: bold;">Message</label>
               <textarea id="message" name="subject" placeholder="Write something..." required style="height:170px"></textarea>
-              <button id="submit" type="submit" style="border-color: navy; font-weight: bold;">Submit</button>
+              <button id="submit" type="submit" style="font-weight: bold;">Submit</button><br><br>
+              <label for="file" style="font-weight: bold;">Upload File</label><br>
+              <input type="file" id="file" name="file" accept=".txt,.pdf,.doc,.docx.,jpg,.png" required>
             </form>
           </div>
         </div>
       </div>
+
       <script>
 
 function validateEmail(email) {

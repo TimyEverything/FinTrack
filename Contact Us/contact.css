@@ -1,31 +1,40 @@
-* {
-    box-sizing: border-box;
+    * {
+      box-sizing: border-box;
   }
   
   input[type=text], select, textarea {
-    width: 100%;
-    padding: 20px;
-    border: 2px solid rgba(0, 0, 0, 0.473);
-    margin-top: 5px;
-    margin-bottom: 15px;
-    resize: vertical;
+      width: 100%;
+      padding: 20px;
+      border: 2px solid rgba(0, 0, 0, 0.473);
+      margin-top: 5px;
+      margin-bottom: 15px;
+      resize: vertical;
   }
   
-    .container {
+  .container {
       border-radius: 5px;
-      background-color: #0d7b8a;
+      background-color: #0F2C4E ;
       padding: 40px;
-    }
+  }
   
-    .column {
+  .column {
       float: left;
-      width: 50%;
+      width: 100%; /* For mobile, take up full width */
       margin-top: 6px;
       padding: 20px;
-    }
+  }
   
-    .row:after {
+  .row:after {
       content: "";
       display: table;
       clear: both;
-    }
+  }
+  
+  /* Media query for tablet/desktop */
+  @media screen and (min-width: 1300px) {
+      .column {
+          width: 50%; /* For desktop, make each column take up half of the container */
+      }
+
+  }
+  
