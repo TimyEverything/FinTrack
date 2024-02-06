@@ -4,30 +4,31 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Business | Cash Flow Sheet</title>
-        <link rel="stylesheet" type="text/css" href="/FInTrack/global_styles.css">
+        <link rel="stylesheet" type="text/css" href=" /global_styles.css">
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <header>
-        <div class="navbar">
-            <a href="/FInTrack/Home/index.html" class="w3-button w3-round w3-theme-d3 w3-border " target>HOME</a>
-            <a href="/FInTrack/Login/sign up.html" class="w3-button w3-round w3-theme-d3 w3-border " target>ABOUT</a> 
-            <div class="dropdown">
-              <a href="#" class="dropbtn">LOGIN</a>
-              <div class="dropdown-content">
-                <a href="/FInTrack/Login/sign up.html" class="w3-button w3-round w3-theme-d3 w3-border " target>SIGN UP</a>
-                <a href="/FInTrack/Login/login.html" class="w3-button w3-round w3-theme-d3 w3-border " target>LOGIN</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <a href="#" class="dropbtn">TRACKER</a>
-              <div class="dropdown-content">
-                <a href="/FInTrack/Tracker/Personal_1.html" class="w3-button w3-round w3-theme-d3 w3-border " target>PERSONAL </a>
-                <a href="/FInTrack/Tracker/Business_1.html" class="w3-button w3-round w3-theme-d3 w3-border " target>BUSINESS </a>
-                
-              </div>
-            </div>
-            <a href="/FInTrack/Contact/contact.html" class="w3-button w3-round w3-theme-d3 w3-border " target>CONTACT US</a>
+      <div class="navbar">
+        <a href="/Home/index.html" class="w3-button w3-round w3-theme-d3 w3-border " target>HOME</a>
+        <a href="/About/About.html" class="w3-button w3-round w3-theme-d3 w3-border " target>ABOUT</a> 
+        <div class="dropdown">
+          <a href="#" class="dropbtn">LOGIN</a>
+          <div class="dropdown-content">
+            <a href="/Login/signup.html" class="w3-button w3-round w3-theme-d3 w3-border " target>SIGN UP</a>
+            <a href="/Login/login.html" class="w3-button w3-round w3-theme-d3 w3-border " target>LOGIN</a>
           </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">TRACKER</a>
+          <div class="dropdown-content">
+            <a href="/Tracker/Personal_1.html" class="w3-button w3-round w3-theme-d3 w3-border " target>PERSONAL </a>
+            <a href="/Tracker/Business_1.html" class="w3-button w3-round w3-theme-d3 w3-border " target>BUSINESS </a>
+            <a href="/Tracker/testgrounds.html" class="w3-button w3-round w3-theme-d3 w3-border " target>OPTIONAL </a>
+            
+          </div>
+        </div>
+        <a href="/Contact Us/contact.html" class="w3-button w3-round w3-theme-d3 w3-border " target>CONTACT US</a>
+      </div>
     </header>
     <body>
         
@@ -36,7 +37,7 @@
             <tr><th>Item</th><th>Month 1</th><th>Month 2</th><th>Month 3</th><th>Total</th><th>Section</th><th>Comments</th></tr>
             <tr><th>Gross Income</th><th><p>R <span id="GrInc1"></span></p></th><th><p>R <span id="GrInc2"></span></p></th><th><p>R <span id="GrInc3"></span></p></th><th><p>R <span id="GrInc4"></span></p></th> <td>A</td><td>Total Income</td></tr>
             <tr><td>Cash Balance</td><td>R <input oninput="calculateNet()" type="text" id="CshB1" name="CshB1"></td><td><p>R <span id="CshB2"></span></p></td><td><p>R <span id="CshB3"></span></p></td> <td><p>R <span id="CshB4"></span></p></td> </tr>
-            <tr><td>Sales</td><td>R <input oninput="calculateNet()" type="text" id="Sales1" name="Sales1"></td><td>R <input oninput="calculateNet()" type="text" id="Sales2" name="Sales2"></td><td>R <input oninput="calculateNet()" type="text" id="Sales3" name="Sales3"></td> <td><p>R <span id="Sales4"></span></p></td> </tr>
+            <tr><td>Monthly Sales</td><td>R <input oninput="calculateNet()" type="text" id="Sales1" name="Sales1"></td><td>R <input oninput="calculateNet()" type="text" id="Sales2" name="Sales2"></td><td>R <input oninput="calculateNet()" type="text" id="Sales3" name="Sales3"></td> <td><p>R <span id="Sales4"></span></p></td> </tr>
             <tr><td>Investments</td><td>R <input oninput="calculateNet()" type="text" id="Inv1" name="Inv1"></td><td>R <input oninput="calculateNet()" type="text" id="Inv2" name="Inv2"></td><td>R <input oninput="calculateNet()" type="text" id="Inv3" name="Inv3"></td> <td><p>R <span id="Inv4"></span></p></td> </tr>
             <tr><td>Loan</td><td>R <input oninput="calculateNet()" type="text" id="LnIn1" name="LnIn1"></td><td>R <input oninput="calculateNet()" type="text" id="LnIn2" name="LnIn2"></td><td>R <input oninput="calculateNet()" type="text" id="LnIn3" name="LnIn3"></td> <td><p>R <span id="LnIn4"></span></p></td> </tr>
             <!--Expense-->      
@@ -52,7 +53,7 @@
             <tr><td>Internet</td><td>R <input oninput="calculateNet()" type="text" id="Inter1" name="Inter1"></td> <td>R <input oninput="calculateNet()" type="text" id="Inter2" name="Inter2"></td><td>R <input oninput="calculateNet()" type="text" id="Inter3" name="Inter3"></td> <td><p>R <span id="Inter4"></span></p></td> </tr>
           <!--Net-->
             <tr><th>Income (before tax)</th><th><p>R <span id="IncBTax1"></span></p></th> <th><p>R <span id="IncBTax2"></span></p></th><th><p>R <span id="IncBTax3"></span></p></td><td><p>R <span id="IncBTax4"></span></p></td><td>C</td><td>A-B</td></tr>
-            <tr><td>Tax</td><td>R <input oninput="calculateNet()" type="text" id="Tax1" name="Tax1"></td> <td>R <input oninput="calculateNet()" type="text" id="Tax2" name="Tax2"></td><td>R <input oninput="calculateNet()" type="text" id="Tax3" name="Tax3"></td> <td><p>R <span id="Tax4"></span></p></td> <td>D</td></tr>
+            <tr><td>Monthly Tax</td><td>R <input oninput="calculateNet()" type="text" id="Tax1" name="Tax1"></td> <td>R <input oninput="calculateNet()" type="text" id="Tax2" name="Tax2"></td><td>R <input oninput="calculateNet()" type="text" id="Tax3" name="Tax3"></td> <td><p>R <span id="Tax4"></span></p></td> <td>D</td></tr>
             <tr><th>Income (after tax)</th><th><p>R <span id="IncATax1"></span></p></th> <th><p>R <span id="IncATax2"></span></p></th><th><p>R <span id="IncATax3"></span></p></td><td><p>R <span id="IncATax4"></span></p></td><td>E</td><td>C-D</td></tr>
             <tr><td>Loan</td><td>R <input oninput="calculateNet()" type="text" id="LnOut1" name="LnOut1"></td> <td>R <input oninput="calculateNet()" type="text" id="LnOut2" name="LnOut2"></td><td>R <input oninput="calculateNet()" type="text" id="LnOut3" name="LnOut3"></td> <td><p>R <span id="LnOut4"></span></p></td> <td>F</td></tr>
             <tr><th>Net Income (Expense)</th><th><p>R <span id="Net1"></span></p></th> <th><p>R <span id="Net2"></span></p></th><th><p>R <span id="Net3"></span></p></td><td><p>R <span id="Net4"></span></p></td><td>G</td><td>E-F</td></tr>

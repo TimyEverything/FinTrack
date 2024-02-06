@@ -79,6 +79,7 @@ function onChecked(rowIndex) { // Perform actions for checked state
       let inBox = "calculateNet(" + val +")";
       inputBx.setAttribute("oninput", inBox);
       inputBx.setAttribute("type","number");
+      inputBx.setAttribute("min","1");
       console.log(inputBx.attributes);
       td.appendChild(inputBx);
     }
@@ -237,7 +238,8 @@ function calculateTax(grIn) {
             }
         }
     }    
-    itemList[12][2] = taxAmount / 12;
+    let roundTaxAmm = taxAmount / 12;
+    itemList[12][2] = roundTaxAmm.toFixed(2);
     tax = itemList[12][2] || "0"; 
     document.getElementById("tax").innerHTML = "<p>R " + tax +"</p>" || "0";
 
